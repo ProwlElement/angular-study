@@ -1,6 +1,6 @@
 
 
-export class CourseService{
+export class CoursesService{
     getCourses(){
         return ["1", "2", "3"];
     }
