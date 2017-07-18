@@ -1,21 +1,22 @@
+
 import { CoursesService } from './courses.service';
-import {Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'courses',
-    template: `
-        <button (click)="onSave($event)" [style.backgroundColor]="isActive ? 'blue' : 'green'" type="button" class="btn btn-primary">
-            Save
-        </button>
+    template:  `
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
     `,
 })
 
 export class CoursesComponent {
-    isActive = true;
+    email = 'two way binding';
 
-    onSave($event) {
-        this.isActive = !this.isActive;
+    onKeyUp() {
+        console.log(this.email);
     }
 
 }
+
+
