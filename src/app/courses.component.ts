@@ -6,17 +6,22 @@ import { Component, NgModule } from '@angular/core';
     // tslint:disable-next-line:component-selector
     selector: 'courses',
     template:  `
-        <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+        {{ course.title | uppercase}} <br/>
+        {{ course.rating | number }} <br/>
+        {{ course.students | number:'1.2-4'}} <br/>
+        {{ course.price | currency:'EUR':true }} <br/>
+        {{ course.releaseDate | date:'shortDate' }} <br/>
     `,
 })
 
 export class CoursesComponent {
-    email = 'two way binding';
-
-    onKeyUp() {
-        console.log(this.email);
-    }
-
+    course = {
+        title: 'Prowlmusic event',
+        rating: 9.47,
+        students: 300000,
+        price: 80,
+        releaseDate: new Date(2016, 2, 1)
+    };
 }
 
 
