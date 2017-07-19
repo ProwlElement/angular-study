@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { SummaryPipe } from './summary.pipe';
+import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SummaryPipe } from './summary.pipe';
     CourseComponent,
     CoursesComponent,
     AuthorsComponent,
-    SummaryPipe
+    SummaryPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
