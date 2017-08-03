@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-star',
+  // tslint:disable-next-line:component-selector
+  selector: 'star',
   template: `
     <div>
       <span class="glyphicon"
