@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -7,15 +7,21 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./favourite.component.css']
 })
 export class FavouriteComponent implements OnInit {
+  // tslint:disable-next-line:no-input-rename
   @Input() isFavourite: boolean;
+  // tslint:disable-next-line:no-output-rename
+  @Output() click = new EventEmitter();
   constructor() { }
 
-  ngOnInit(){
-    
+  ngOnInit() {
   }
 
   onClick() {
     this.isFavourite = !this.isFavourite;
+    this.click.emit({ newValue: this.isFavourite });
   }
+}
 
+export interface FavouriteChangedEventArgs {
+  newValue: boolean;
 }
