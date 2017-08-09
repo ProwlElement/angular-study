@@ -8,10 +8,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  tweet = {
-    body: 'Body of like...',
-    isLiked: true,
-    likesCount: 10
-  };
+  courses = [1,2,3];
 
 }
